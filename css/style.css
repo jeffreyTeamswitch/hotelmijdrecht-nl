@@ -3,8 +3,8 @@
   --cl-white:	#ffffff;
   --cl-grey:	#efefef;
   --cl-grey-dark:	#c1c1c1;
-  --cl-primary:	#5f207a;
-  --cl-primary-dark:	#451859;
+  --cl-primary:	#641a45;
+  --cl-primary-dark:	#dc002e;
   --cl-primary-text:	var(--cl-white);
   --cl-secondary:	rgb(198, 0, 109);
   --cl-secondary-rgba:	rgba(198, 0, 109, .25);
@@ -24,8 +24,8 @@
   --fw-regular:	400;
   --fw-medium:	700;
   --fw-bold:	900;
-  --ff-primary:	"lexia", serif;
-  --ff-secondary:	"Lato", sans-serif;
+  --ff-primary:	"Fira Sans", sans-serif;
+  --ff-secondary:	"Libre Baskerville", serif;
   --br-rectangle-top-left:	4px;
   --br-rectangle-top-right:	4px;
   --br-rectangle-bottom-right:4px;
@@ -34,4 +34,10 @@
   --br-square-top-right:	128px;
   --br-square-bottom-right:	128px;
   --br-square-bottom-left:	128px;
+}
+
+h2.custom {
+  background-color: red;
+  color: white;
+  font-size: 48px;
 }
