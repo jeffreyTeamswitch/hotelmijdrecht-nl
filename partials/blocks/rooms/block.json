@@ -1,0 +1,21 @@
+{
+	"name": "switch/rooms",
+	"title": "Rooms",
+	"description": "All rooms block",
+	"category": "switch-blocks",
+	"icon": "",
+	"apiVersion": 2,
+	"keywords": ["rooms", "switch"],
+	"acf": {
+		"mode": "preview",
+		"postTypes": [],
+		"renderTemplate": "rooms.php"
+	},
+	"render_callback": "my_block_render_callback",
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"alignContent": false
+	},
+	"example": {}
+}
