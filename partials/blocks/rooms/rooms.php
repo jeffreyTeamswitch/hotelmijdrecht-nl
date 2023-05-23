@@ -16,7 +16,7 @@ $style = get_field('style');
 	<div class="wrapper">
 			
 	<?php
-		$post_type = 'rooms';
+		$post_type = 'room';
 		$post_per_page = get_field('card_amount');
 		$post_more = get_field('card_more');
 		$post_current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -57,13 +57,14 @@ $style = get_field('style');
 
 				$id = get_the_ID();
 
-				$type = '';
 				$repeater = get_field('rooms_images');
+				console_log($repeater);
+
 				$image = $repeater[0]['rooms_images']['sizes']['960-1-1'];
 				$title = get_the_title($id);
-				$text = false;
+				$text = get_field('room_description', $id);
 				$room_id = get_field('room_id');
-				$button = get_the_permalink($id);
+				// $button = get_the_permalink($id);
 
 				?>
 
@@ -71,7 +72,7 @@ $style = get_field('style');
 
 					<?php if ($image): ?>
 
-						<div class="card__image <?php if ($type == 'video'): ?>card__image--video<?php endif; ?>">
+						<div class="card__image">
 
 							<a href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">
 
@@ -91,22 +92,18 @@ $style = get_field('style');
 
 							<?php if ($text): ?>
 
-								<p><?= $text; ?></p>
+								<p class="dotdotdot--4"><?= $text; ?></p>
 
 							<?php endif; ?>
 						</div>
 
 					<?php endif; ?>
 
-					<?php if ($button): ?>
+					<div class="card__button">
 
-						<div class="card__button">
+						<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">Bekijk</a>
 
-							<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">Bekijk</a>
-
-						</div>
-
-					<?php endif; ?>
+					</div>
 
 				</div>
 
