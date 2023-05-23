@@ -1,5 +1,8 @@
-h2.custom {
-	background-color: red;
-	color: white;
-	font-size: 48px;
+section.rooms{
+	.card__text{
+		p{
+			margin-bottom: 48px;
+			padding: 0;
+		}
+	}
 }

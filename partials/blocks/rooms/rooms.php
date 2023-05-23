@@ -2,21 +2,19 @@
 
 // vars
 
-$card_type = get_field('card_type');
 $align = get_field('align');
 $background = get_field('background');
 $color = get_field('color');
 $id = get_field('id');
-$image = get_field('image');
 $style = get_field('style');
 
 ?>
 
-<section id="<?= $id; ?>" class="cards card--<?= $align; ?> card--<?= $background; ?> card--<?= $color; ?> card--<?= $image; ?> card--<?= $style; ?>">
+<section id="<?= $id; ?>" class="rooms cards card--<?= $align; ?> card--<?= $background; ?> card--<?= $color; ?> card--full card--<?= $style; ?>">
 	<div class="wrapper">
 			
 	<?php
-		$post_type = 'room';
+		$post_type = 'rooms';
 		$post_per_page = get_field('card_amount');
 		$post_more = get_field('card_more');
 		$post_current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -57,10 +55,10 @@ $style = get_field('style');
 
 				$id = get_the_ID();
 
-				$repeater = get_field('rooms_images');
+				$repeater = get_field('room_images', $id);
 				console_log($repeater);
 
-				$image = $repeater[0]['rooms_images']['sizes']['960-1-1'];
+				$image = $repeater[0]['image']['sizes']['960-1-1'];
 				$title = get_the_title($id);
 				$text = get_field('room_description', $id);
 				$room_id = get_field('room_id');
@@ -137,22 +135,24 @@ $style = get_field('style');
 	?>
 	</div>
 </section>
-<?php 
+
+<?php
+
 add_action( 'acf/include_fields', function() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		return;
 	}
 
 	acf_add_local_field_group( array(
-		'key' => 'group_646c74839cb59',
-		'title' => 'Room',
+		'key' => 'group_646ccd97c64a8',
+		'title' => 'Block: Rooms',
 		'fields' => array(
 			array(
-				'key' => 'field_646c7666daef4',
-				'label' => 'Room information',
-				'name' => '',
+				'key' => 'field_646ccd97ca166',
+				'label' => 'Align',
+				'name' => 'align',
 				'aria-label' => '',
-				'type' => 'accordion',
+				'type' => 'select',
 				'instructions' => '',
 				'required' => 0,
 				'conditional_logic' => 0,
@@ -161,14 +161,77 @@ add_action( 'acf/include_fields', function() {
 					'class' => '',
 					'id' => '',
 				),
-				'open' => 0,
-				'multi_expand' => 0,
-				'endpoint' => 0,
+				'choices' => array(
+					'left' => 'Left',
+					'center' => 'Center',
+					'right' => 'Right',
+				),
+				'default_value' => 'left',
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'ajax' => 0,
+				'placeholder' => '',
 			),
 			array(
-				'key' => 'field_646c74831731a',
-				'label' => 'Room ID',
-				'name' => 'room_id',
+				'key' => 'field_646ccd97ca16c',
+				'label' => 'Background',
+				'name' => 'background',
+				'aria-label' => '',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'white' => 'White',
+					'grey' => 'Grey',
+					'black' => 'Black',
+					'primary' => 'Primary',
+					'secondary' => 'Secondary',
+				),
+				'default_value' => 'white',
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'ajax' => 0,
+				'placeholder' => '',
+			),
+			array(
+				'key' => 'field_646ccd97ca173',
+				'label' => 'Color',
+				'name' => 'color',
+				'aria-label' => '',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'basic' => 'Basic',
+				),
+				'default_value' => 'basic',
+				'return_format' => 'value',
+				'multiple' => 0,
+				'allow_null' => 0,
+				'ui' => 0,
+				'ajax' => 0,
+				'placeholder' => '',
+			),
+			array(
+				'key' => 'field_646ccd97ca179',
+				'label' => 'Id',
+				'name' => 'id',
 				'aria-label' => '',
 				'type' => 'text',
 				'instructions' => '',
@@ -180,105 +243,17 @@ add_action( 'acf/include_fields', function() {
 					'id' => '',
 				),
 				'default_value' => '',
-				'maxlength' => '',
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
-			),
-			array(
-				'key' => 'field_646c749d2e254',
-				'label' => 'Room images',
-				'name' => 'room_images',
-				'aria-label' => '',
-				'type' => 'repeater',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'layout' => 'table',
-				'pagination' => 0,
-				'min' => 0,
-				'max' => 0,
-				'collapsed' => '',
-				'button_label' => 'Add Row',
-				'rows_per_page' => 20,
-				'sub_fields' => array(
-					array(
-						'key' => 'field_646c74ad2e255',
-						'label' => 'Room image',
-						'name' => 'image',
-						'aria-label' => '',
-						'type' => 'image',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '',
-							'class' => '',
-							'id' => '',
-						),
-						'return_format' => 'array',
-						'library' => 'all',
-						'min_width' => '',
-						'min_height' => '',
-						'min_size' => '',
-						'max_width' => '',
-						'max_height' => '',
-						'max_size' => '',
-						'mime_types' => '',
-						'preview_size' => 'medium',
-						'parent_repeater' => 'field_646c749d2e254',
-					),
-				),
-			),
-			array(
-				'key' => 'field_646cc46a01372',
-				'label' => 'Room description',
-				'name' => '',
-				'aria-label' => '',
-				'type' => 'accordion',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'open' => 0,
-				'multi_expand' => 0,
-				'endpoint' => 0,
-			),
-			array(
-				'key' => 'field_646cc47701373',
-				'label' => 'Room description',
-				'name' => 'room_description',
-				'aria-label' => '',
-				'type' => 'textarea',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
 				'maxlength' => '',
-				'rows' => '',
-				'placeholder' => '',
-				'new_lines' => '',
 			),
 			array(
-				'key' => 'field_646cc49e01374',
-				'label' => 'Room facilities',
-				'name' => 'room_facilities',
+				'key' => 'field_646ccd97ca186',
+				'label' => 'Style',
+				'name' => 'style',
 				'aria-label' => '',
-				'type' => 'repeater',
+				'type' => 'select',
 				'instructions' => '',
 				'required' => 0,
 				'conditional_logic' => 0,
@@ -287,70 +262,40 @@ add_action( 'acf/include_fields', function() {
 					'class' => '',
 					'id' => '',
 				),
-				'layout' => 'table',
-				'pagination' => 0,
-				'min' => 0,
-				'max' => 0,
-				'collapsed' => '',
-				'button_label' => 'Add Row',
-				'rows_per_page' => 20,
-				'sub_fields' => array(
-					array(
-						'key' => 'field_646cc4c201375',
-						'label' => 'Facilitie',
-						'name' => 'facilitie',
-						'aria-label' => '',
-						'type' => 'text',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '',
-							'class' => '',
-							'id' => '',
-						),
-						'default_value' => '',
-						'maxlength' => '',
-						'placeholder' => '',
-						'prepend' => '',
-						'append' => '',
-						'parent_repeater' => 'field_646cc49e01374',
-					),
+				'choices' => array(
+					'three' => 'Three',
+					'four' => 'Four',
 				),
+				'default_value' => 'four',
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'ajax' => 0,
+				'placeholder' => '',
 			),
 		),
 		'location' => array(
 			array(
 				array(
-					'param' => 'post_type',
+					'param' => 'block',
 					'operator' => '==',
-					'value' => 'rooms',
+					'value' => 'switch/rooms',
 				),
 			),
 		),
-		'menu_order' => -1,
+		'menu_order' => 0,
 		'position' => 'normal',
-		'style' => 'seamless',
+		'style' => 'default',
 		'label_placement' => 'top',
 		'instruction_placement' => 'label',
-		'hide_on_screen' => array(
-			0 => 'the_content',
-			1 => 'excerpt',
-			2 => 'discussion',
-			3 => 'comments',
-			4 => 'revisions',
-			5 => 'slug',
-			6 => 'author',
-			7 => 'format',
-			8 => 'featured_image',
-			9 => 'categories',
-			10 => 'tags',
-			11 => 'send-trackbacks',
-		),
+		'hide_on_screen' => '',
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
 	) );
 } );
+
+
 
 ?>
