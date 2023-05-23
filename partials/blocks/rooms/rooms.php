@@ -135,7 +135,6 @@ $style = get_field('style');
 		endif;
 
 		wp_reset_postdata();
-		break;
 	
 
 	?>
