@@ -58,9 +58,11 @@ $style = get_field('style');
 				$id = get_the_ID();
 
 				$type = '';
-				$image = get_the_post_thumbnail_url($id, '960-1-1');
+				$repeater = get_field('rooms_images');
+				$image = $repeater[0]['rooms_images']['sizes']['960-1-1'];
 				$title = get_the_title($id);
 				$text = false;
+				$room_id = get_field('room_id');
 				$button = get_the_permalink($id);
 
 				?>
@@ -71,7 +73,7 @@ $style = get_field('style');
 
 						<div class="card__image <?php if ($type == 'video'): ?>card__image--video<?php endif; ?>">
 
-							<a href="<?= $button; ?>" <?php if ($post_type == 'facebook' || $post_type == 'projects' ): ?>target="_blank"<?php endif; ?>>
+							<a href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">
 
 								<img loading="lazy" src="<?= $image; ?>" alt="<?= $title; ?>">
 							
@@ -87,12 +89,6 @@ $style = get_field('style');
 
 							<h2><?= $title; ?></h2>
 
-							<?php if ($post_type == 'projects'): ?>
-
-								<h3><?= $date; ?></h3>
-								
-							<?php endif; ?>
-
 							<?php if ($text): ?>
 
 								<p><?= $text; ?></p>
@@ -106,7 +102,7 @@ $style = get_field('style');
 
 						<div class="card__button">
 
-							<a class="button button--filled-secondary" href="<?= $button; ?>" <?php if ($post_type == 'facebook' || $post_type == 'projects' ): ?>target="_blank"<?php endif; ?>>Bekijk</a>
+							<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">Bekijk</a>
 
 						</div>
 
