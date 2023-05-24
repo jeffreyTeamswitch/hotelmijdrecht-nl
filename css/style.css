@@ -44,7 +44,7 @@ section.rooms .card__text p {
 }
 
 section.book {
-  padding-block: 48px;
+  padding: 48px;
 }
 section.book .wrapper {
   max-width: 1920px;
