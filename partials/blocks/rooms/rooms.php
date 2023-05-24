@@ -56,12 +56,11 @@ $style = get_field('style');
 				$id = get_the_ID();
 
 				$repeater = get_field('room_images', $id);
-				console_log($repeater);
 
 				$image = $repeater[0]['image']['sizes']['960-1-1'];
 				$title = get_the_title($id);
 				$text = get_field('room_description', $id);
-				$room_id = get_field('room_id');
+				$room_id = get_field('room_id', $id);
 				// $button = get_the_permalink($id);
 
 				?>

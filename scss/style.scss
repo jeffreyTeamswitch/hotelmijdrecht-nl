@@ -41,12 +41,15 @@
 	--br-rectangle-top-right:		4px;
 	--br-rectangle-bottom-right:	4px;
 	--br-rectangle-bottom-left:		4px;
+	--br-rectangle:					4px;
 
 	--br-square-top-left:		128px;
 	--br-square-top-right:		128px;
 	--br-square-bottom-right:	128px;
 	--br-square-bottom-left:	128px;
+	--br-square:				128px;
 
 };
 
 @import '../partials/blocks/rooms/rooms';
+@import '../partials/blocks/book/book';

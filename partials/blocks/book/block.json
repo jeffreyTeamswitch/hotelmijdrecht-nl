@@ -1,0 +1,21 @@
+{
+	"name": "switch/book",
+	"title": "Book",
+	"description": "All book block",
+	"category": "switch-blocks",
+	"icon": "",
+	"apiVersion": 2,
+	"keywords": ["book", "switch"],
+	"acf": {
+		"mode": "preview",
+		"postTypes": [],
+		"renderTemplate": "book.php"
+	},
+	"render_callback": "my_block_render_callback",
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"alignContent": false
+	},
+	"example": {}
+}

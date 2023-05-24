@@ -1,0 +1,88 @@
+section.book{
+	padding-block: 48px;
+
+	.wrapper{
+		max-width: 1920px;
+		background-color: var(--cl-grey);
+		padding: 48px;
+		border-radius: var(--br-rectangle);
+
+		form{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 24px;
+
+			input:not(.button),
+			select{
+				width: 100%;
+				border-radius: var(--br-rectangle);
+				border: none;
+				padding: 0 24px;
+				cursor: pointer;
+				transition: all ease-in 0.2s;
+
+				&:hover{
+					opacity: .64;
+				}
+			}
+
+			input[type="date"] {
+				position: relative;
+		
+				&::-webkit-calendar-picker-indicator{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					background-color: transparent;
+					width: 100%;
+					height: 64px;
+					background-image: url(../img/schedule.svg);
+					background-size: 20px;
+					background-repeat: no-repeat;
+					background-position: calc(100% - 24px) center;
+					cursor: pointer;
+				}
+
+				&::-webkit-inner-spin-button{
+					display: none;
+					-webkit-appearance: none;
+				}
+			}
+		}
+
+		.button{
+			margin-bottom: 0;
+		}
+	}
+
+	&.book--white {
+		background: var(--cl-white);
+	}
+
+	&.book--grey {
+		background: var(--cl-grey);
+
+		.wrapper{
+			background: var(--cl-white);
+		}
+
+		input:not(.button),
+		select{
+			background-color: var(--cl-grey);
+		}
+	}
+
+	&.book--black {
+		background: var(--cl-black);
+	}
+
+	&.book--primary {
+		background: var(--cl-primary);
+	}
+
+	&.book--secondary {
+		background: var(--cl-secondary);
+	}
+}
