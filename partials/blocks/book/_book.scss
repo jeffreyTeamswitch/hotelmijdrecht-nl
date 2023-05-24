@@ -9,22 +9,33 @@ section.book{
 
 		form{
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: space-between;
 			gap: 24px;
+
+			@include desktop{
+				flex-direction: row;
+			}
 
 			input:not(.button),
 			select{
 				width: 100%;
+				height: 64px;
+				padding: 0 24px;
 				border-radius: var(--br-rectangle);
 				border: none;
-				padding: 0 24px;
 				cursor: pointer;
 				transition: all ease-in 0.2s;
 
 				&:hover{
 					opacity: .64;
 				}
+
+				&.display_none{
+					display: none;
+				}
+
+				
 			}
 
 			input[type="date"] {
@@ -48,6 +59,36 @@ section.book{
 				&::-webkit-inner-spin-button{
 					display: none;
 					-webkit-appearance: none;
+				}
+			}
+
+			.select{
+				position: relative;
+				width: 100%;
+
+				select{
+					position: relative;
+					appearance: none;
+
+					&::-ms-expand {
+						display: none;
+					}
+				}
+
+				&::after{
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: 24px;
+					transform: translateY(-50%);
+					height: 16px;
+					aspect-ratio: 1 / 1;
+					background-color: var(--cl-black);
+					mask-image: url(../img/caret.svg);
+					mask-size: 16px 16px;
+					mask-repeat: no-repeat;
+					mask-position: center;
+					pointer-events: none;
 				}
 			}
 		}
