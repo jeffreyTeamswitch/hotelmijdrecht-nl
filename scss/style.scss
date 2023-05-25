@@ -68,6 +68,20 @@
 		@content;
 	}
 }
+.whatsapp-container{
+	display: none;
+}
+
+.cubilis-ratebox.cubilis-ratebox--bottom{
+	left: 48px;
+	right: auto;
+
+	@include desktop{
+		left: 96px;
+	}
+}
+
+
 
 @import '../partials/blocks/rooms/rooms';
 @import '../partials/blocks/book/book';

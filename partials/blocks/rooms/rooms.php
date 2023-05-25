@@ -61,6 +61,8 @@ $style = get_field('style');
 				$title = get_the_title($id);
 				$text = get_field('room_description', $id);
 				$room_id = get_field('room_id', $id);
+				$button_text = get_field('string_card_button', 'option') ?: 'Bekijk';
+				$button_text_book = get_field('room_book_button', 'option') ?: 'Boek nu';
 				// $button = get_the_permalink($id);
 
 				?>
@@ -97,8 +99,8 @@ $style = get_field('style');
 					<?php endif; ?>
 
 					<div class="card__button">
-
-						<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">Bekijk</a>
+						<a class="button button--filled-primary" href="<?= get_permalink($id) ?>"><?= $button_text ?></a>
+						<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank"><?= $button_text_book ?></a>
 
 					</div>
 

@@ -1,4 +1,12 @@
 <?php
+// Scripts
+    ?>
+    <!-- <script type='text/javascript' src='https://static.cubilis.eu/js/ratebox.bundle.js' defer></script>
+    <script type='text/javascript' defer>
+        var rb = new Ratebox({IBEUrl: 'hampshire-hotel-mijdrecht', key: '79ACA542-6611-4E9F-AD3A-D820868E97F6', locale: 'en' });
+    </script> -->
+    <?php
+//
 // Custom post type
     $child_blocks = array(
         'rooms',
@@ -699,10 +707,75 @@
             'show_in_rest' => 0,
         ) );
     } );
+//
+// Custom strings (hotel)
+    add_action( 'acf/include_fields', function() {
+        if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+            return;
+        }
 
-
-
-
-
+        acf_add_local_field_group( array(
+            'key' => 'group_646f1f16ddf70',
+            'title' => 'Options (hotel)',
+            'fields' => array(
+                array(
+                    'key' => 'field_646f1f1779241',
+                    'label' => 'Strings (hotel)',
+                    'name' => '',
+                    'aria-label' => '',
+                    'type' => 'accordion',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'open' => 0,
+                    'multi_expand' => 0,
+                    'endpoint' => 0,
+                ),
+                array(
+                    'key' => 'field_646f1f2c79242',
+                    'label' => 'Room card button',
+                    'name' => 'room_book_button',
+                    'aria-label' => '',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'maxlength' => '',
+                    'placeholder' => 'Book a room',
+                    'prepend' => '',
+                    'append' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'options_page',
+                        'operator' => '==',
+                        'value' => 'theme-general-settings',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'seamless',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+            'show_in_rest' => 0,
+        ) );
+    } );
 
 ?>
