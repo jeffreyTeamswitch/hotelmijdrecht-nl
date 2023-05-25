@@ -1,4 +1,12 @@
 <?php
+// Settings vars
+    add_action( 'after_setup_theme', 'websquad_child_theme_settings' );
+
+    function websquad_child_theme_settings(){
+        global $lang_switcher;
+        $lang_switcher = true; // instead of showing the date, show the subtitle under 'event' post types.
+    }
+//
 // Scripts
 //
 // Custom post type
@@ -602,7 +610,7 @@
                                 'class' => '',
                                 'id' => '',
                             ),
-                            'default_value' => '1 adult',
+                            'default_value' => 'adult',
                             'maxlength' => '',
                             'placeholder' => '',
                             'prepend' => '',
