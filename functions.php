@@ -1,11 +1,5 @@
 <?php
 // Scripts
-    ?>
-    <!-- <script type='text/javascript' src='https://static.cubilis.eu/js/ratebox.bundle.js' defer></script>
-    <script type='text/javascript' defer>
-        var rb = new Ratebox({IBEUrl: 'hampshire-hotel-mijdrecht', key: '79ACA542-6611-4E9F-AD3A-D820868E97F6', locale: 'en' });
-    </script> -->
-    <?php
 //
 // Custom post type
     $child_blocks = array(
