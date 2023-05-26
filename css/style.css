@@ -54,11 +54,21 @@
 
 .header__mainmenu .header__logo {
   height: 256px;
-  margin-top: 128px;
+  margin-top: 80px;
 }
-.header__mainmenu .header__logo img {
-  max-width: none !important;
+@media only screen and (min-width: 640px) {
+  .header__mainmenu .header__logo {
+    margin-top: 96px;
+  }
+}
+.header__mainmenu .header__logo a img {
+  max-width: calc(100% - 96px);
   max-height: none !important;
+}
+@media only screen and (min-width: 640px) {
+  .header__mainmenu .header__logo a img {
+    max-width: none;
+  }
 }
 
 section.rooms .card__text p {

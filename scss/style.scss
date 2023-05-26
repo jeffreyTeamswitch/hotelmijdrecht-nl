@@ -84,11 +84,22 @@
 .header__mainmenu{
 	.header__logo{
 		height: 256px;
-		margin-top: 128px;
+		margin-top: 80px;
 
-		img{
-			max-width: none!important;
-			max-height: none!important;
+		@include tablet{
+			margin-top: 96px;
+		}
+		
+		a{
+
+			img{
+				max-width: calc(100% - 96px);
+				max-height: none!important;
+				
+				@include tablet{
+					max-width: none;
+				}
+			}
 		}
 	}
 }
