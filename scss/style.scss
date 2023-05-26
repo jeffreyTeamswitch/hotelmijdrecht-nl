@@ -81,6 +81,17 @@
 	}
 }
 
+.header__mainmenu{
+	.header__logo{
+		height: 256px;
+		margin-top: 128px;
+
+		img{
+			max-width: none;
+		}
+	}
+}
+
 
 
 @import '../partials/blocks/rooms/rooms';

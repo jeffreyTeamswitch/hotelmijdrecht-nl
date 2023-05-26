@@ -52,6 +52,14 @@
   }
 }
 
+.header__mainmenu .header__logo {
+  height: 256px;
+  margin-top: 128px;
+}
+.header__mainmenu .header__logo img {
+  max-width: none;
+}
+
 section.rooms .card__text p {
   margin-bottom: 48px;
   padding: 0;
