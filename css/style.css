@@ -122,6 +122,7 @@ section.book .wrapper form select {
   padding: 0 24px;
   border-radius: var(--br-rectangle);
   border: none;
+  font-size: var(--fs-tiny);
   cursor: pointer;
   -webkit-transition: all ease-in 0.2s;
   -o-transition: all ease-in 0.2s;
