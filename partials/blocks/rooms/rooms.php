@@ -64,6 +64,7 @@ $style = get_field('style');
 				$button_text = get_field('string_card_button', 'option') ?: 'Bekijk';
 				$button_text_book = get_field('room_book_button', 'option') ?: 'Boek nu';
 				// $button = get_the_permalink($id);
+				$lang = apply_filters( 'wpml_current_language', NULL );
 
 				?>
 
@@ -73,7 +74,7 @@ $style = get_field('style');
 
 						<div class="card__image">
 
-							<a href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank">
+							<a href="<?= get_permalink($id) ?>" target="_blank">
 
 								<img loading="lazy" src="<?= $image; ?>" alt="<?= $title; ?>">
 							
@@ -100,7 +101,7 @@ $style = get_field('style');
 
 					<div class="card__button">
 						<a class="button button--filled-primary" href="<?= get_permalink($id) ?>"><?= $button_text ?></a>
-						<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=nl-NL&Room=<?= $room_id; ?>" target="_blank"><?= $button_text_book ?></a>
+						<a class="button button--filled-secondary" href="https://reservations.cubilis.eu/hampshire-hotel-mijdrecht/Rooms/GeneralAvailability?Language=<?= $lang .'-'. $lang ?>&Room=<?= $room_id; ?>" target="_blank"><?= $button_text_book ?></a>
 
 					</div>
 

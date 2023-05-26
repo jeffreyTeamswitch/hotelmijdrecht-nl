@@ -13,6 +13,8 @@ if ($post_type == 'rooms') {
 	$room_id = get_field('room_id', $page_id);
 }
 
+$lang = apply_filters( 'wpml_current_language', NULL );
+
 $calendar_one = get_field('calendar_one_title');
 $calendar_two = get_field('calendar_two_title');
 $select_title = get_field('select_title');
@@ -24,6 +26,7 @@ $button = get_field('button_text');
 		<form action="https://reservations.cubilis.eu/5528/Rooms/Select?" method="get" target="_blank" novalidate="novalidate">
 			<!-- room id (display none) -->
 			<input type="text" name="Room" class="display_none" value="<?= $room_id ?>">
+			<input type="text" name="Language" class="display_none" value="<?= $lang .'-'. $lang ?>">
 
 			<!-- calandar 1 -->
 			<div>
