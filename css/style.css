@@ -57,7 +57,8 @@
   margin-top: 128px;
 }
 .header__mainmenu .header__logo img {
-  max-width: none;
+  max-width: none !important;
+  max-height: none !important;
 }
 
 section.rooms .card__text p {

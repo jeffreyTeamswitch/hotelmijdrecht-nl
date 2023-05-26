@@ -87,7 +87,8 @@
 		margin-top: 128px;
 
 		img{
-			max-width: none;
+			max-width: none!important;
+			max-height: none!important;
 		}
 	}
 }
