@@ -190,6 +190,7 @@ section.book .wrapper form .select::after {
   -webkit-mask-position: center;
           mask-position: center;
   pointer-events: none;
+  z-index: 2;
 }
 section.book .wrapper .button {
   margin-top: auto;

@@ -107,7 +107,7 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
     } );
 
 
-    // room acf fields 
+    // room (post-type) info acf fields 
 
     add_action( 'acf/include_fields', function() {
         if ( ! function_exists( 'acf_add_local_field_group' ) ) {
@@ -331,11 +331,31 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
         if ( ! function_exists( 'acf_add_local_field_group' ) ) {
             return;
         }
-
+    
         acf_add_local_field_group( array(
             'key' => 'group_646ccd97c64a8',
             'title' => 'Block: Rooms',
             'fields' => array(
+                array(
+                    'key' => 'field_6470ad830946e',
+                    'label' => 'Introduction',
+                    'name' => 'introduction',
+                    'aria-label' => '',
+                    'type' => 'wysiwyg',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'delay' => 0,
+                ),
                 array(
                     'key' => 'field_646ccd97ca166',
                     'label' => 'Align',
@@ -479,12 +499,11 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
             'label_placement' => 'top',
             'instruction_placement' => 'label',
             'hide_on_screen' => '',
-            'active' => true,
+            'active' => false,
             'description' => '',
             'show_in_rest' => 0,
         ) );
     } );
-
 
 //
 // Book
