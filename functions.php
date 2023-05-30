@@ -5,15 +5,15 @@
     function websquad_child_theme_settings(){
         global $lang_switcher;
         $lang_switcher = true; // instead of showing the date, show the subtitle under 'event' post types.
-    }
+    };
 //
 // Scripts
-function add_ratebox() {
-    wp_enqueue_script('ratebox', 'https://static.cubilis.eu/js/ratebox.bundle.js');
-    wp_enqueue_script('child-main', get_stylesheet_directory_uri() . '/js/main.js' , array('ratebox'), wp_get_theme()->get('Version') );
-}
+    function add_ratebox() {
+        wp_enqueue_script('ratebox', 'https://static.cubilis.eu/js/ratebox.bundle.js');
+        wp_enqueue_script('child-main', get_stylesheet_directory_uri() . '/js/main.js' , array('ratebox'), wp_get_theme()->get('Version') );
+    };
 
-add_action( 'wp_enqueue_scripts', 'add_ratebox' );
+    add_action( 'wp_enqueue_scripts', 'add_ratebox' );
 //
 // Custom post type
     $child_blocks = array(
@@ -507,165 +507,65 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
 
 //
 // Book
+
     add_action( 'acf/include_fields', function() {
         if ( ! function_exists( 'acf_add_local_field_group' ) ) {
             return;
         }
 
         acf_add_local_field_group( array(
-            'key' => 'group_646e16e5e4a59',
-            'title' => 'Block: Book',
+            'key' => 'group_646ccd97c64a8',
+            'title' => 'Block: Rooms',
             'fields' => array(
                 array(
-                    'key' => 'field_646e2400170c2',
-                    'label' => 'Input 1',
-                    'name' => 'calendar_one_title',
+                    'key' => 'field_6470ad830946e',
+                    'label' => 'Introduction',
+                    'name' => 'introduction',
                     'aria-label' => '',
-                    'type' => 'text',
+                    'type' => 'wysiwyg',
                     'instructions' => '',
-                    'required' => 1,
+                    'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
                         'id' => '',
                     ),
-                    'default_value' => 'Arrive by',
-                    'maxlength' => '',
+                    'default_value' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'delay' => 0,
+                ),
+                array(
+                    'key' => 'field_646ccd97ca166',
+                    'label' => 'Align',
+                    'name' => 'align',
+                    'aria-label' => '',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'left' => 'Left',
+                        'center' => 'Center',
+                        'right' => 'Right',
+                    ),
+                    'default_value' => 'left',
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
                     'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
                 ),
                 array(
-                    'key' => 'field_646e244d170c3',
-                    'label' => 'Input 2',
-                    'name' => 'calendar_two_title',
-                    'aria-label' => '',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 1,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => 'Departure at',
-                    'maxlength' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                ),
-                array(
-                    'key' => 'field_646e23ab6b0e0',
-                    'label' => 'Select title',
-                    'name' => 'select_title',
-                    'aria-label' => '',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 1,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => 'Guests',
-                    'maxlength' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                ),
-                array(
-                    'key' => 'field_646e1c1fbdd1b',
-                    'label' => 'Select options',
-                    'name' => 'select_options',
-                    'aria-label' => '',
-                    'type' => 'repeater',
-                    'instructions' => '',
-                    'required' => 1,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'layout' => 'table',
-                    'pagination' => 0,
-                    'min' => 3,
-                    'max' => 0,
-                    'collapsed' => '',
-                    'button_label' => 'Add Row',
-                    'rows_per_page' => 20,
-                    'sub_fields' => array(
-                        array(
-                            'key' => 'field_646e1ff0dc6fd',
-                            'label' => 'Quantity',
-                            'name' => 'quantity',
-                            'aria-label' => '',
-                            'type' => 'number',
-                            'instructions' => '',
-                            'required' => 0,
-                            'conditional_logic' => 0,
-                            'wrapper' => array(
-                                'width' => '',
-                                'class' => '',
-                                'id' => '',
-                            ),
-                            'default_value' => '',
-                            'min' => '',
-                            'max' => '',
-                            'placeholder' => '',
-                            'step' => '',
-                            'prepend' => '',
-                            'append' => '',
-                            'parent_repeater' => 'field_646e1c1fbdd1b',
-                        ),
-                        array(
-                            'key' => 'field_646e1c27bdd1c',
-                            'label' => 'Name',
-                            'name' => 'option',
-                            'aria-label' => '',
-                            'type' => 'text',
-                            'instructions' => '',
-                            'required' => 0,
-                            'conditional_logic' => 0,
-                            'wrapper' => array(
-                                'width' => '',
-                                'class' => '',
-                                'id' => '',
-                            ),
-                            'default_value' => 'adult',
-                            'maxlength' => '',
-                            'placeholder' => '',
-                            'prepend' => '',
-                            'append' => '',
-                            'parent_repeater' => 'field_646e1c1fbdd1b',
-                        ),
-                    ),
-                ),
-                array(
-                    'key' => 'field_646e170c6805a',
-                    'label' => 'Button text',
-                    'name' => 'button_text',
-                    'aria-label' => '',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 1,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => 'Book a room',
-                    'maxlength' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                ),
-                array(
-                    'key' => 'field_646e16e5e83e1',
+                    'key' => 'field_646ccd97ca16c',
                     'label' => 'Background',
                     'name' => 'background',
                     'aria-label' => '',
@@ -694,7 +594,32 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
                     'placeholder' => '',
                 ),
                 array(
-                    'key' => 'field_646e16e5e83ee',
+                    'key' => 'field_646ccd97ca173',
+                    'label' => 'Color',
+                    'name' => 'color',
+                    'aria-label' => '',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'basic' => 'Basic',
+                    ),
+                    'default_value' => 'basic',
+                    'return_format' => 'value',
+                    'multiple' => 0,
+                    'allow_null' => 0,
+                    'ui' => 0,
+                    'ajax' => 0,
+                    'placeholder' => '',
+                ),
+                array(
+                    'key' => 'field_646ccd97ca179',
                     'label' => 'Id',
                     'name' => 'id',
                     'aria-label' => '',
@@ -713,13 +638,39 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
                     'append' => '',
                     'maxlength' => '',
                 ),
+                array(
+                    'key' => 'field_646ccd97ca186',
+                    'label' => 'Style',
+                    'name' => 'style',
+                    'aria-label' => '',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'three' => 'Three',
+                        'four' => 'Four',
+                    ),
+                    'default_value' => 'four',
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
+                    'placeholder' => '',
+                ),
             ),
             'location' => array(
                 array(
                     array(
                         'param' => 'block',
                         'operator' => '==',
-                        'value' => 'switch/book',
+                        'value' => 'switch/rooms',
                     ),
                 ),
             ),
@@ -734,6 +685,7 @@ add_action( 'wp_enqueue_scripts', 'add_ratebox' );
             'show_in_rest' => 0,
         ) );
     } );
+
 //
 // Custom strings (hotel)
     add_action( 'acf/include_fields', function() {
