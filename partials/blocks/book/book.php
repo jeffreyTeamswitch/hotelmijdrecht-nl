@@ -25,7 +25,9 @@ $button = get_field('button_text');
 ?>
 <section id="<?= $id ?>" class="book booking-form book--<?= $background ?>">
 	<div class="wrapper">
-		<h3><?= $title ?></h3>
+		<?php if ($title) { ?>
+			<h3><?= $title ?></h3>
+		<?php } ?>
 		<form action="https://reservations.cubilis.eu/5528/Rooms/Select?" method="get" target="_blank" novalidate="novalidate">
 			<!-- room id (display none) -->
 			<input type="text" name="Room" class="display_none" value="<?= $room_id ?>">
