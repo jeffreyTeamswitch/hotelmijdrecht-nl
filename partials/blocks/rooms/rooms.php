@@ -2,6 +2,7 @@
 
 // vars
 
+$introduction = get_field('introduction');
 $align = get_field('align');
 $background = get_field('background');
 $color = get_field('color');
@@ -12,7 +13,13 @@ $style = get_field('style');
 
 <section id="<?= $id; ?>" class="rooms cards card--<?= $align; ?> card--<?= $background; ?> card--<?= $color; ?> card--full card--<?= $style; ?>">
 	<div class="wrapper">
-			
+
+	<?php if ($introduction) { ?>
+		<div class="introduction wysiwyg wysiwyg--<?= $background; ?>">
+			<?= $introduction; ?>
+		</div>
+	<?php } ?>
+
 	<?php
 		$post_type = 'rooms';
 		$post_per_page = get_field('card_amount');

@@ -6,11 +6,11 @@
   --cl-primary:	#641a45;
   --cl-primary-dark:	#dc002e;
   --cl-primary-text:	var(--cl-white);
-  --cl-secondary:	rgb(198, 0, 109);
-  --cl-secondary-rgba:	rgba(198, 0, 109, .25);
-  --cl-secondary:	#db0079;
+  --cl-secondary:	rgb(220, 0, 46);
+  --cl-secondary-rgba:	rgba(220, 0, 46, .25);
+  --cl-secondary:	#DC002E;
   --cl-secondary-text:	var(--cl-white);
-  --cl-error:	#db4437;
+  --cl-error:	#DC002E;
   --fs-tiny:	12px;
   --fs-small:	16px;
   --fs-medium:	20px;
@@ -87,6 +87,9 @@ section.book .wrapper {
   background-color: var(--cl-grey);
   padding: 48px;
   border-radius: var(--br-rectangle);
+}
+section.book .wrapper h3 {
+  padding-bottom: 24px;
 }
 section.book .wrapper form {
   display: -webkit-box;
