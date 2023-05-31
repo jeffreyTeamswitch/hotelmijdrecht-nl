@@ -70,6 +70,13 @@
   }
 }
 
+.cubilis-ratebox {
+  opacity: 0;
+}
+.cubilis-ratebox.show {
+  opacity: 1;
+}
+
 section.rooms .card__text p {
   margin-bottom: 48px;
   padding: 0;

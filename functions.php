@@ -9,11 +9,12 @@
 //
 // Scripts
     function add_ratebox() {
+		wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/vendor/jquery-3.6.1.min.js');
         wp_enqueue_script('ratebox', 'https://static.cubilis.eu/js/ratebox.bundle.js');
         wp_enqueue_script('child-main', get_stylesheet_directory_uri() . '/js/main.js' , array('ratebox'), wp_get_theme()->get('Version') );
     };
 
-    // add_action( 'wp_enqueue_scripts', 'add_ratebox' );
+    add_action( 'wp_enqueue_scripts', 'add_ratebox' );
 //
 // Custom post type
     $child_blocks = array(
