@@ -4,11 +4,10 @@
   --cl-grey:	#efefef;
   --cl-grey-dark:	#c1c1c1;
   --cl-primary:	#641a45;
-  --cl-primary-dark:	#dc002e;
+  --cl-primary-dark:	rgb(80, 20, 55);
   --cl-primary-text:	var(--cl-white);
-  --cl-secondary:	rgb(220, 0, 46);
-  --cl-secondary-rgba:	rgba(220, 0, 46, .25);
   --cl-secondary:	#DC002E;
+  --cl-secondary-rgba:	rgba(220, 0, 46);
   --cl-secondary-text:	var(--cl-white);
   --cl-error:	#DC002E;
   --fs-tiny:	12px;
@@ -159,6 +158,7 @@ section.book .wrapper form input[type=date]::after {
   top: 0;
   right: 0;
   background-color: var(--cl-black);
+  opacity: 0.48;
   width: 64px;
   height: 64px;
   -webkit-mask-image: url(../img/schedule.svg);
