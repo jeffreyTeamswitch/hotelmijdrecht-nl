@@ -4,8 +4,12 @@ section.book{
 	.wrapper{
 		max-width: 1920px;
 		background-color: var(--cl-grey);
-		padding: 48px;
 		border-radius: var(--br-rectangle);
+		padding: 48px 24px;
+
+		@include tablet{
+			padding: 48px;
+		}
 
 		h3{
 			padding-bottom: 24px;
@@ -53,8 +57,26 @@ section.book{
 
 			input[type="date"] {
 				position: relative;
-		
+				display: flex;
+
+				&::after{
+					content: '';
+					position: absolute;
+					top: 0;
+					// left: 0;
+					right: 0;
+					background-color: var(--cl-grey);
+					width: 64px;
+					height: 64px;
+					mask-image: url(../img/schedule.svg);
+					mask-size: 20px;
+					mask-repeat: no-repeat;
+					mask-position: center;
+					cursor: pointer;
+				}
+
 				&::-webkit-calendar-picker-indicator{
+					background-image: none;
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -62,10 +84,10 @@ section.book{
 					background-color: transparent;
 					width: 100%;
 					height: 64px;
-					background-image: url(../img/schedule.svg);
-					background-size: 20px;
-					background-repeat: no-repeat;
-					background-position: calc(100% - 24px) center;
+					// background-image: url(../img/schedule.svg);
+					// background-size: 20px;
+					// background-repeat: no-repeat;
+					// background-position: calc(100% - 24px) center;
 					cursor: pointer;
 				}
 
