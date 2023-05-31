@@ -80,18 +80,18 @@ section.rooms .card__button .button--filled-primary {
 }
 
 section.book {
-  padding: 48px;
+  padding: 48px 24px;
+}
+@media only screen and (min-width: 640px) {
+  section.book {
+    padding: 48px;
+  }
 }
 section.book .wrapper {
   max-width: 1920px;
   background-color: var(--cl-grey);
   border-radius: var(--br-rectangle);
-  padding: 48px 24px;
-}
-@media only screen and (min-width: 640px) {
-  section.book .wrapper {
-    padding: 48px;
-  }
+  padding: 48px;
 }
 section.book .wrapper h3 {
   padding-bottom: 24px;
@@ -149,13 +149,16 @@ section.book .wrapper form input[type=date] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 section.book .wrapper form input[type=date]::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--cl-grey);
+  background-color: var(--cl-black);
   width: 64px;
   height: 64px;
   -webkit-mask-image: url(../img/schedule.svg);

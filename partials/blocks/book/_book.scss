@@ -1,15 +1,15 @@
 section.book{
-	padding: 48px;
+	padding: 48px 24px;
+
+	@include tablet{
+		padding: 48px;
+	}
 
 	.wrapper{
 		max-width: 1920px;
 		background-color: var(--cl-grey);
 		border-radius: var(--br-rectangle);
-		padding: 48px 24px;
-
-		@include tablet{
-			padding: 48px;
-		}
+		padding: 48px;
 
 		h3{
 			padding-bottom: 24px;
@@ -58,6 +58,7 @@ section.book{
 			input[type="date"] {
 				position: relative;
 				display: flex;
+				appearance: none;
 
 				&::after{
 					content: '';
@@ -65,7 +66,7 @@ section.book{
 					top: 0;
 					// left: 0;
 					right: 0;
-					background-color: var(--cl-grey);
+					background-color: var(--cl-black);
 					width: 64px;
 					height: 64px;
 					mask-image: url(../img/schedule.svg);
