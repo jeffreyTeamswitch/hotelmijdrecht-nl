@@ -33,6 +33,26 @@ section.book{
 				}
 			}
 
+			#promotiecode-container{
+				width: auto;
+				display: flex;
+				flex-direction: column;
+
+				p,
+				h4{
+					width: max-content;
+				}
+
+				h4{
+					margin-block: auto;
+				}
+
+				input{
+					width: 100%;
+					min-width: 100%;
+				}
+			}
+
 			input:not(.button),
 			select{
 				width: 100%;

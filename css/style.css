@@ -129,6 +129,29 @@ section.book .wrapper form div {
 section.book .wrapper form div p {
   padding-bottom: 8px;
 }
+section.book .wrapper form #promotiecode-container {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+section.book .wrapper form #promotiecode-container p,
+section.book .wrapper form #promotiecode-container h4 {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+section.book .wrapper form #promotiecode-container h4 {
+  margin-block: auto;
+}
+section.book .wrapper form #promotiecode-container input {
+  width: 100%;
+  min-width: 100%;
+}
 section.book .wrapper form input:not(.button),
 section.book .wrapper form select {
   width: 100%;

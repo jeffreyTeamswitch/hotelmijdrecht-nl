@@ -22,6 +22,10 @@ $calendar_two = get_field('calendar_two_title');
 $select_title = get_field('select_title');
 $button = get_field('button_text');
 
+$coupon = get_field('coupon_code');
+$coupon_title = get_field('coupon_title');
+$coupon_content = get_field('coupon_text');
+
 ?>
 <section id="<?= $id ?>" class="book booking-form book--<?= $background ?>">
 	<div class="wrapper">
@@ -61,6 +65,22 @@ $button = get_field('button_text');
 					</select>
 				</div>
 			</div>
+
+			<?php if ($coupon) { ?>
+				<div id="promotiecode-container">
+					<p><?= $coupon_title ?></p>
+					<h4 id="promotiecode-title" style="cursor: pointer;" onclick="showPromo()"><?= $coupon_content ?></h4>
+					<input style="display: none;" id="promotiecode" type="text" name="discountcode"  placeholder="<?= $coupon_title ?>">
+				</div>
+
+				<script>
+					function showPromo() {
+						document.getElementById("promotiecode").style.display = "block";
+						document.getElementById("promotiecode-title").style.display = "none";
+						document.getElementById("promotiecode-container").style.width = "100%";
+					}
+				</script>
+			<?php } ?>
 
 			<input type="submit" value="<?= $button ?>" class="button">
 		</form>
