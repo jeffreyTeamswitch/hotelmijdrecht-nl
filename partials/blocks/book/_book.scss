@@ -96,6 +96,7 @@ section.book{
 					mask-repeat: no-repeat;
 					mask-position: center;
 					cursor: pointer;
+					pointer-events: none;
 				}
 
 				&::-webkit-calendar-picker-indicator{

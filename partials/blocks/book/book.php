@@ -40,14 +40,51 @@ $coupon_content = get_field('coupon_text');
 			<!-- calandar 1 -->
 			<div>
 				<p><?= $calendar_one ?></p>
-				<input type="date" name="Arrival" value="<?= date("Y-m-d"); ?>" placeholder="<?= date("Y-m-d"); ?>">
+				<input id="arrival" type="date" name="Arrival" value="<?= date("Y-m-d"); ?>" placeholder="<?= date("Y-m-d"); ?>" min="<?= date("Y-m-d"); ?>" onchange="departureDate()">
 			</div>
 
 			<!-- calandar 2 -->
 			<div>
 				<p><?= $calendar_two ?></p>
-				<input type="date" name="Departure" value="<?= $date_tomorrow ?>" placeholder="<?= $date_tomorrow ?>">
+				<input 	id="departure" 
+						type="date" 
+						name="Departure" 
+						value="<?= $date_tomorrow ?>" 
+						placeholder="<?= $date_tomorrow ?>" 
+						<?= $date_tomorrow ?>
+				>
 			</div>
+
+			<script>
+				//  $('#arrival').change(function(){
+				// 	var arrivalDate = $('#arrival').val();
+				// 	// $('#departure').prop("disabled", false);
+				// 	$("#departure").attr("min", arrivalDate);
+				// });
+
+				function departureDate() {
+					var arrivalDate = document.getElementById('arrival').value;
+
+					function formatDate() {
+						arrivalDate = new Date(arrivalDate),
+						month = '' + arrivalDate.getMonth(),
+						day = '' + (arrivalDate.getDate() + 1),
+						year = arrivalDate.getFullYear();
+
+						if (month.length < 2) 
+							month = '0' + month;
+						if (day.length < 2) 
+							day = '0' + day;
+
+						return [year, month, day].join('-');
+					};
+
+					document.getElementById('departure').setAttribute("min", formatDate(arrivalDate));
+					document.getElementById('departure').setAttribute("placeholder", formatDate(arrivalDate));
+					document.getElementById('departure').setAttribute("value", formatDate(arrivalDate));
+
+				};
+			</script>
 
 			<!-- select -->
 			<div>
