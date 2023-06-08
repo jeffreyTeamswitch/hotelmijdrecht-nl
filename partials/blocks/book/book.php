@@ -8,10 +8,19 @@ $date_tomorrow = date_format($date_tomorrow, 'Y-m-d');
 $post_type = get_post_type();
 $page_id = get_the_ID();
 $room_id = '';
+$rate_id = '';
+$arrangement_id = get_field('arrangement_id');
 
 if ($post_type == 'rooms') {
 	$room_id = get_field('room_id', $page_id);
 }
+
+if ($arrangement_id) {
+	$rate_id = get_field('arrangement_id');
+}
+
+console_log($arrangement_id);
+console_log($rate_id);
 
 $lang = apply_filters( 'wpml_current_language', NULL );
 $lang_upper = strtoupper($lang);
@@ -35,6 +44,7 @@ $coupon_content = get_field('coupon_text');
 		<form action="https://reservations.cubilis.eu/5528/Rooms/Select?" method="get" target="_blank" novalidate="novalidate">
 			<!-- room id (display none) -->
 			<input type="text" name="Room" class="display_none" value="<?= $room_id ?>">
+			<input type="text" name="Rate" class="display_none" value="<?= $rate_id ?>">
 			<input type="text" name="Language" class="display_none" value="<?= $lang .'-'. $lang_upper ?>">
 
 			<!-- calandar 1 -->
@@ -56,12 +66,6 @@ $coupon_content = get_field('coupon_text');
 			</div>
 
 			<script>
-				//  $('#arrival').change(function(){
-				// 	var arrivalDate = $('#arrival').val();
-				// 	// $('#departure').prop("disabled", false);
-				// 	$("#departure").attr("min", arrivalDate);
-				// });
-
 				function departureDate() {
 					var arrivalDate = document.getElementById('arrival').value;
 

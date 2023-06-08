@@ -119,12 +119,105 @@ section.reference--secondary .tns-outer::after {
   background-color: var(--cl-secondary-text);
 }
 
+section.rooms {
+  --bg: var(--cl-white);
+  --fg: var(--cl-black);
+  --bg2: var(--cl-grey);
+  --accent: var(--cl-primary);
+  --accent-text: var(--cl-primary-text);
+  background-color: var(--bg);
+  color: var(--fg);
+}
+section.rooms .tns-inner {
+  margin-left: 0 !important;
+}
+section.rooms .card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  gap: 0;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+section.rooms .slide {
+  margin-right: 24px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+section.rooms .card__item {
+  width: 100%;
+}
 section.rooms .card__text p {
   margin-bottom: 48px;
   padding: 0;
 }
 section.rooms .card__button .button--filled-primary {
   margin-bottom: 24px;
+}
+section.rooms .tns-controls {
+  margin-top: 24px;
+  position: relative;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 8px;
+  top: auto;
+  padding-right: 24px;
+}
+@media only screen and (min-width: 640px) {
+  section.rooms .tns-controls {
+    padding-right: 48px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  section.rooms .tns-controls {
+    padding-right: 96px;
+  }
+}
+section.rooms .tns-outer {
+  --slider-bg: var(--bg);
+  --slider-fg: var(--fg);
+  --slider-accent: var(--fg);
+  --slider-accent-text: var(--bg);
+}
+section.rooms.cards--grey {
+  --bg: var(--cl-grey);
+  --fg: var(--cl-black);
+  --bg2: var(--cl-white);
+}
+section.rooms.cards--black {
+  --bg: var(--cl-black);
+  --fg: var(--cl-white);
+  --bg2: var(--cl-grey);
+  --fg2: var(--cl-black);
+  --accent: var(--cl-white);
+  --accent-text: var(--cl-black);
+}
+section.rooms.cards--primary {
+  --bg: var(--cl-primary);
+  --fg: var(--cl-primary-text);
+  --bg2: var(--cl-white);
+  --fg2: var(--cl-black);
+  --accent: var(--cl-white);
+  --accent-text: var(--cl-black);
+}
+section.rooms.cards--secondary {
+  --bg: var(--cl-secondary);
+  --fg: var(--cl-white);
+  --bg2: var(--cl-white);
+  --fg2: var(--cl-black);
+  --accent: var(--cl-white);
+  --accent-text: var(--cl-black);
 }
 
 section.book {

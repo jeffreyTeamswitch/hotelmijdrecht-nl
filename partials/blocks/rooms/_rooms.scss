@@ -1,4 +1,35 @@
 section.rooms{
+
+	--bg: var(--cl-white);
+	--fg: var(--cl-black);
+	--bg2: var(--cl-grey);
+	--accent: var(--cl-primary);
+	--accent-text: var(--cl-primary-text);
+
+	background-color: var(--bg);
+	color: var(--fg);
+
+	.tns-inner{
+		margin-left: 0!important;
+	}
+
+	.card__container{
+		display: flex;
+		height: fit-content;
+		flex-wrap: initial;
+		gap: 0;
+		justify-content: initial;
+	}
+
+	.slide{
+		margin-right: 24px;
+		display: flex!important;
+	}
+	
+	.card__item{
+		width: 100%;
+	}
+
 	.card__text{
 		p{
 			margin-bottom: 48px;
@@ -10,5 +41,81 @@ section.rooms{
 		.button--filled-primary{
 			margin-bottom: 24px;
 		}
+	}
+
+	// .tns-controls{
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	justify-content: flex-end;
+	// 	gap: 12px;
+	// 	bottom: -88px;
+	// 	top: auto;
+	// 	padding-inline: 0;
+
+	// 	button:not(:disabled){
+	// 		background-color: var(--cl-primary);
+	// 	}
+
+	// 	button:disabled{
+	// 		background-color: var(--cl-black);
+	// 		opacity: .48;
+	// 	}
+	// }
+
+	.tns-controls {
+		margin-top: 24px;
+		position: relative;
+		transform: translate(0, 0);
+		justify-content: flex-end;
+		gap: 8px;
+		top: auto;
+		padding-right: 24px;
+
+		@include tablet {
+			padding-right: 48px;
+		}
+		@include desktop {
+			padding-right: 96px;
+		}
+	}
+
+	.tns-outer {
+		--slider-bg: var(--bg);
+		--slider-fg: var(--fg);
+		--slider-accent: var(--fg);
+		--slider-accent-text: var(--bg);
+	}
+
+	&.cards--grey {
+		--bg: var(--cl-grey);
+		--fg: var(--cl-black);
+		--bg2: var(--cl-white);
+	}
+
+	&.cards--black {
+		--bg: var(--cl-black);
+		--fg: var(--cl-white);
+		--bg2: var(--cl-grey);
+		--fg2: var(--cl-black);
+		--accent: var(--cl-white);
+		--accent-text: var(--cl-black);
+	}
+
+	&.cards--primary {
+		--bg: var(--cl-primary);
+		--fg: var(--cl-primary-text);
+		--bg2: var(--cl-white);
+		--fg2: var(--cl-black);
+		--accent: var(--cl-white);
+		--accent-text: var(--cl-black);
+	}
+
+	&.cards--secondary {
+		--bg: var(--cl-secondary);
+		--fg: var(--cl-white);
+		--bg2: var(--cl-white);
+		--fg2: var(--cl-black);
+		--accent: var(--cl-white);
+		--accent-text: var(--cl-black);
 	}
 }
