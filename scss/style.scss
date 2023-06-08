@@ -113,6 +113,55 @@
 }
 
 
+// TripAdvisor logo added to the references
+section.reference{
+	.tns-outer{
+		position: relative;
+
+		&::after{
+			content: '';
+			background-color: var(--cl-black);
+			height: 48px;
+			width: 128px;
+			position: absolute;
+			top: 0;
+			left: 0px;
+			mask-image: url(../img/Tripadvisor_Logo.svg);
+			mask-size: contain;
+			mask-position: center;
+			mask-repeat: no-repeat;
+
+			@include desktop{
+				top: initial;
+				bottom: 0;
+			}
+		}
+	}
+
+	&--black{
+		.tns-outer{
+			&::after{
+				background-color: var(--cl-white);
+			}
+		}
+	}
+
+	&--primary{
+		.tns-outer{
+			&::after{
+				background-color: var(--cl-primary-text);
+			}
+		}
+	}
+
+	&--secondary{
+		.tns-outer{
+			&::after{
+				background-color: var(--cl-secondary-text);
+			}
+		}
+	}
+}
 
 @import '../partials/blocks/rooms/rooms';
 @import '../partials/blocks/book/book';

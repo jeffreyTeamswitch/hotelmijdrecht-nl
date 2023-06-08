@@ -6,6 +6,14 @@
         global $lang_switcher;
         $lang_switcher = true; // instead of showing the date, show the subtitle under 'event' post types.
     };
+
+    ?>
+
+    <script type="text/javascript">
+        var lang_code = "<?= apply_filters( 'wpml_current_language', NULL ) ?>";
+    </script>
+
+    <?php
 //
 // Scripts
     function add_ratebox() {

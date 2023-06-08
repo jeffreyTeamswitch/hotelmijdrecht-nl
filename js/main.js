@@ -1,6 +1,7 @@
 
 // var rb = '';
-var rb = new Ratebox({IBEUrl: 'hampshire-hotel-mijdrecht', key: '79ACA542-6611-4E9F-AD3A-D820868E97F6', locale: 'en' });
+console.log(lang_code);
+var rb = new Ratebox({IBEUrl: 'hampshire-hotel-mijdrecht', key: '79ACA542-6611-4E9F-AD3A-D820868E97F6', locale: lang_code });
 
 jQuery(function ($) {
 	function show_ratebox() {
