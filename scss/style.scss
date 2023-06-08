@@ -112,6 +112,12 @@
 	}
 }
 
+section.hero hero__half_half .tns-outer .slide img{
+	@include desktop{
+		aspect-ratio: 16 / 9;
+	}
+}
+
 
 // TripAdvisor logo added to the references
 section.reference{

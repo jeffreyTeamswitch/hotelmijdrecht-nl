@@ -77,6 +77,12 @@
   opacity: 1;
 }
 
+@media only screen and (min-width: 1280px) {
+  section.hero hero__half_half .tns-outer .slide img {
+    aspect-ratio: 16/9;
+  }
+}
+
 section.reference .tns-outer {
   position: relative;
 }
