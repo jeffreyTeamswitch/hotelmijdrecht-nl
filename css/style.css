@@ -119,6 +119,13 @@ section.reference--secondary .tns-outer::after {
   background-color: var(--cl-secondary-text);
 }
 
+.reservation-widget {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+
 section.rooms {
   --bg: var(--cl-white);
   --fg: var(--cl-black);

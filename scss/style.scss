@@ -169,5 +169,10 @@ section.reference{
 	}
 }
 
+.reservation-widget {
+    width: fit-content;
+    margin-inline: auto;
+}
+
 @import '../partials/blocks/rooms/rooms';
 @import '../partials/blocks/book/book';
