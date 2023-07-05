@@ -154,6 +154,12 @@ $slider_id = wp_unique_id( 'reference' );
 								edgePadding: 48,
 							},
 							1280: {
+								items: 3,
+								// gutter: 48,
+								edgePadding: 96,
+							},
+
+							1600: {
 								items: 4,
 								// gutter: 48,
 								edgePadding: 96,
