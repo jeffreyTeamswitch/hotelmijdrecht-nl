@@ -63,6 +63,10 @@ $slider_id = wp_unique_id( 'reference' );
 					$id = get_the_ID();
 
 					$repeater = get_field('room_images', $id);
+					
+					if (sizeof($repeater < 1)) {
+						continue;
+					};
 
 					$image = $repeater[0]['image']['sizes']['960-1-1'];
 					$title = get_the_title($id);
