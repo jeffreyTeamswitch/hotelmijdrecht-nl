@@ -34,7 +34,9 @@ $slider_id = wp_unique_id( 'reference' );
 						'post_date' => 'desc', 
 					),
 					'posts_per_page' => $post_per_page,
-					'paged' => $post_current_page
+					'paged' => $post_current_page,
+                    'suppress_filters' => false,
+
 				)
 			);
 			$post_max_pages = $post_query->max_num_pages;
